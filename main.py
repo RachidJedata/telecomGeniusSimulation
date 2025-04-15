@@ -23,6 +23,10 @@ class SimulationRequest(BaseModel):
 
 app = FastAPI()
 
+@app.get("/")
+def read_root():
+    return {"message": "Hello from Replit!"}
+
 # Add CORS middleware  <-- This is the critical part
 # More secure local development configuration
 app.add_middleware(
